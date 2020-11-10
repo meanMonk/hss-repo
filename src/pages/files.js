@@ -4,7 +4,6 @@ import { Layout } from "../components/Layout/Layout"
 
 const files = ({ data }) => {
   const { edges } = data.allFile
-  console.log(edges)
   return (
     <Layout>
       <h2>File System use the GraphQl inteligence!</h2>
