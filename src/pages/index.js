@@ -1,19 +1,22 @@
 import React from "react"
-import { Link } from "gatsby"
-import Header from "../components/header"
+import { Layout } from "../components/Layout/Layout"
+import { User } from "../components/user/user"
 
 export default function Home() {
   return (
     <>
-      <Header>Hello world!</Header>
-      <p>
-        <Link to="/contact">Click here</Link> for more details!
-      </p>
-      <Link to="/about">About Us!</Link>
-      <img
-        src="https://source.unsplash.com/random/800X400"
-        alt="randomg images"
-      />
+      <Layout>
+        <User
+          username="Jane Doe"
+          avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
+          excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        />
+        <User
+          username="Bob Smith"
+          avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
+          excerpt="I'm Bob Smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        />
+      </Layout>
     </>
   )
 }

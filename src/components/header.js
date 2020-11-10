@@ -1,5 +1,9 @@
 import React from "react"
 
+import headerStyles from "./header.module.scss"
+
 export default function Header(params) {
-  return <h1>{params.title || params.children}</h1>
+  return (
+    <div className={headerStyles.header}>{params.title || params.children}</div>
+  )
 }

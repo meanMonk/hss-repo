@@ -1,0 +1,16 @@
+.layout {
+    margin: 3rem auto;
+    max-width: 70vw;
+    padding: 10px;
+
+    .navLinks {
+        list-style: none;
+        float: right;
+        display: inline;
+
+        .navLinkItem {
+            display: inline;
+            margin-right: 1rem;
+        }
+    }
+}

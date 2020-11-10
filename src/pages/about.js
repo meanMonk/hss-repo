@@ -1,13 +1,12 @@
-import React from "react"
 import { Link } from "gatsby"
-import Header from "../components/header"
+import React from "react"
+import { Layout } from "../components/Layout/Layout"
 
-export default function functionName(params) {
+export default function About({ data }) {
   return (
-    <>
-      <Header title={"Hello 123 !"}></Header>
+    <Layout>
+      <h2>About us!</h2>
       <Link to="/">Home!</Link>
-      <h5>I am about us page!</h5>
-    </>
+    </Layout>
   )
 }
