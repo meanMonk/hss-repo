@@ -1,0 +1,536 @@
+query PREVIEW_QUERY($id: ID!) {
+  page(id: $id, idType: ID, asPreview: true) {
+    ancestors(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    author {
+      node {
+        id
+      }
+    }
+    authorDatabaseId
+    authorId
+    wpChildren: children(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    commentCount
+    commentStatus
+    comments(first: 100) {
+      nodes {
+        id
+      }
+    }
+    content
+    contentType {
+      node {
+        id
+      }
+    }
+    databaseId
+    date
+    dateGmt
+    desiredSlug
+    enclosure
+    excerpt
+    featuredImage {
+      node {
+        __typename
+        id
+      }
+    }
+    featuredImageDatabaseId
+    featuredImageId
+    guid
+    id
+    isFrontPage
+    isPostsPage
+    isRevision
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+    link
+    menuOrder
+    modified
+    modifiedGmt
+    wpParent: parent {
+      node {
+        id
+        __typename
+      }
+    }
+    parentDatabaseId
+    parentId
+    sections {
+      fieldGroupName
+      sections {
+        __typename
+        ... on Page_Sections_Sections_HomeSlider {
+          fieldGroupName
+          slides {
+            buttonLink
+            buttonText
+            fieldGroupName
+            image {
+              __typename
+              id
+            }
+            subTitle
+            title
+          }
+        }
+        ... on Page_Sections_Sections_OurInstitutes {
+          fieldGroupName
+          institutes {
+            description
+            established
+            fieldGroupName
+            image {
+              __typename
+              id
+            }
+            title
+            webSite
+          }
+          ourInstitutesTitle
+        }
+        ... on Page_Sections_Sections_CoursesOffered {
+          coursesList {
+            coursesInnerList {
+              fieldGroupName
+              link
+              title
+            }
+            coursesTitle
+            fieldGroupName
+            learnMoreLink
+            learnMoreText
+          }
+          coursesOfferedTitle
+          fieldGroupName
+          leftImage {
+            __typename
+            id
+          }
+        }
+        ... on Page_Sections_Sections_AnnouncementsEvents {
+          announcementsList {
+            __typename
+            ... on Post {
+              id
+            }
+            ... on Page {
+              id
+            }
+            ... on MediaItem {
+              id
+            }
+          }
+          announcementsTitle
+          eventList {
+            __typename
+            ... on Post {
+              id
+            }
+            ... on Page {
+              id
+            }
+            ... on MediaItem {
+              id
+            }
+          }
+          eventsTitle
+          fieldGroupName
+          viewAllEventLink
+        }
+        ... on Page_Sections_Sections_PageTitle {
+          backgroundImage {
+            __typename
+            id
+          }
+          fieldGroupName
+          title
+        }
+        ... on Page_Sections_Sections_TabsSection {
+          fieldGroupName
+          tabList {
+            fieldGroupName
+            sectionListSections {
+              __typename
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_HomeSlider {
+                fieldGroupName
+                slides {
+                  buttonLink
+                  buttonText
+                  fieldGroupName
+                  image {
+                    __typename
+                    id
+                  }
+                  subTitle
+                  title
+                }
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_OurInstitutes {
+                fieldGroupName
+                institutes {
+                  description
+                  established
+                  fieldGroupName
+                  image {
+                    __typename
+                    id
+                  }
+                  title
+                  webSite
+                }
+                ourInstitutesTitle
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_CoursesOffered {
+                coursesList {
+                  coursesInnerList {
+                    fieldGroupName
+                    link
+                    title
+                  }
+                  coursesTitle
+                  fieldGroupName
+                  learnMoreLink
+                  learnMoreText
+                }
+                coursesOfferedTitle
+                fieldGroupName
+                leftImage {
+                  __typename
+                  id
+                }
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_AnnouncementsEvents {
+                announcementsList {
+                  __typename
+                  ... on Post {
+                    id
+                  }
+                  ... on Page {
+                    id
+                  }
+                  ... on MediaItem {
+                    id
+                  }
+                }
+                announcementsTitle
+                eventList {
+                  __typename
+                  ... on Post {
+                    id
+                  }
+                  ... on Page {
+                    id
+                  }
+                  ... on MediaItem {
+                    id
+                  }
+                }
+                eventsTitle
+                fieldGroupName
+                viewAllEventLink
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_PageTitle {
+                backgroundImage {
+                  __typename
+                  id
+                }
+                fieldGroupName
+                title
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_TabsSection {
+                fieldGroupName
+                tabList {
+                  fieldGroupName
+                  tabTitle
+                }
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_LeftImageRightTitleDescription {
+                fieldGroupName
+                leftImage {
+                  __typename
+                  id
+                }
+                rightDesc {
+                  fieldGroupName
+                  paragraph
+                }
+                rightTitle
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_VisionMission {
+                fieldGroupName
+                missionDesc
+                missionTitle
+                visionDesc
+                visionMissionImage1 {
+                  __typename
+                  id
+                }
+                visionMissionImage2 {
+                  __typename
+                  id
+                }
+                visionTitle
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_OurCoreValues {
+                fieldGroupName
+                ourCoreValuesList {
+                  desc
+                  fieldGroupName
+                  image {
+                    __typename
+                    id
+                  }
+                  title
+                }
+                ourCoreValuesTitle
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_LogoSection {
+                fieldGroupName
+                leftLogoImage {
+                  __typename
+                  id
+                }
+                logoSectionRightList {
+                  fieldGroupName
+                  title
+                }
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_LeadershipSection {
+                fieldGroupName
+                leadershipSectionList {
+                  description {
+                    fieldGroupName
+                    paragraph
+                  }
+                  fieldGroupName
+                  image {
+                    __typename
+                    id
+                  }
+                  imageSubTitle
+                  imageTitle
+                  title
+                }
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_BoardOfTrustees {
+                boardOfTrusteesList {
+                  __typename
+                  ... on Post {
+                    id
+                  }
+                  ... on Page {
+                    id
+                  }
+                  ... on MediaItem {
+                    id
+                  }
+                }
+                boardOfTrusteesTitle
+                fieldGroupName
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_TenderList {
+                fieldGroupName
+                tenderList {
+                  date
+                  document {
+                    __typename
+                    id
+                  }
+                  fieldGroupName
+                  info
+                  title
+                }
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_ContactFormMap {
+                address
+                emailAddress
+                fieldGroupName
+                phoneNumber
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_AboutManagement {
+                aboutManagementList {
+                  description {
+                    fieldGroupName
+                    paragraph
+                  }
+                  fieldGroupName
+                  image {
+                    __typename
+                    id
+                  }
+                  title
+                }
+                fieldGroupName
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_WhyJoinUs {
+                fieldGroupName
+                whyJoinUsList {
+                  description
+                  fieldGroupName
+                  title
+                }
+                whyJoinUsTitle
+              }
+              ... on Page_Sections_Sections_TabsSection_tabList_SectionListSections_Recruitment {
+                fieldGroupName
+              }
+            }
+            tabTitle
+          }
+        }
+        ... on Page_Sections_Sections_LeftImageRightTitleDescription {
+          fieldGroupName
+          leftImage {
+            __typename
+            id
+          }
+          rightDesc {
+            fieldGroupName
+            paragraph
+          }
+          rightTitle
+        }
+        ... on Page_Sections_Sections_VisionMission {
+          fieldGroupName
+          missionDesc
+          missionTitle
+          visionDesc
+          visionMissionImage1 {
+            __typename
+            id
+          }
+          visionMissionImage2 {
+            __typename
+            id
+          }
+          visionTitle
+        }
+        ... on Page_Sections_Sections_OurCoreValues {
+          fieldGroupName
+          ourCoreValuesList {
+            desc
+            fieldGroupName
+            image {
+              __typename
+              id
+            }
+            title
+          }
+          ourCoreValuesTitle
+        }
+        ... on Page_Sections_Sections_LogoSection {
+          fieldGroupName
+          leftLogoImage {
+            __typename
+            id
+          }
+          logoSectionRightList {
+            fieldGroupName
+            title
+          }
+        }
+        ... on Page_Sections_Sections_LeadershipSection {
+          fieldGroupName
+          leadershipSectionList {
+            description {
+              fieldGroupName
+              paragraph
+            }
+            fieldGroupName
+            image {
+              __typename
+              id
+            }
+            imageSubTitle
+            imageTitle
+            title
+          }
+        }
+        ... on Page_Sections_Sections_BoardOfTrustees {
+          boardOfTrusteesList {
+            __typename
+            ... on Post {
+              id
+            }
+            ... on Page {
+              id
+            }
+            ... on MediaItem {
+              id
+            }
+          }
+          boardOfTrusteesTitle
+          fieldGroupName
+        }
+        ... on Page_Sections_Sections_TenderList {
+          fieldGroupName
+          tenderList {
+            date
+            document {
+              __typename
+              id
+            }
+            fieldGroupName
+            info
+            title
+          }
+        }
+        ... on Page_Sections_Sections_ContactFormMap {
+          address
+          emailAddress
+          fieldGroupName
+          phoneNumber
+        }
+        ... on Page_Sections_Sections_AboutManagement {
+          aboutManagementList {
+            description {
+              fieldGroupName
+              paragraph
+            }
+            fieldGroupName
+            image {
+              __typename
+              id
+            }
+            title
+          }
+          fieldGroupName
+        }
+        ... on Page_Sections_Sections_WhyJoinUs {
+          fieldGroupName
+          whyJoinUsList {
+            description
+            fieldGroupName
+            title
+          }
+          whyJoinUsTitle
+        }
+        ... on Page_Sections_Sections_Recruitment {
+          fieldGroupName
+        }
+      }
+    }
+    slug
+    status
+    template {
+      templateName
+      __typename
+    }
+    title
+    uri
+    __typename
+  }
+}
