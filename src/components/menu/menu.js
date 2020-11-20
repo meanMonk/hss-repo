@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import React from "react"
 import layoutStyles from "../Layout/Layout.module.scss"
 
@@ -10,34 +10,18 @@ export const ListLink = params => {
   )
 }
 
-export default ({ data }) => {
-  const { wpMenu } = useStaticQuery(graphql`
-    {
-      wpMenu(slug: { eq: "menu-1" }) {
-        name
-        menuItems {
-          nodes {
-            label
-            url
-            path
-            parentId
-            connectedNode {
-              node {
-                ... on WpContentNode {
-                  uri
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  return !!wpMenu && !!wpMenu.menuItems && !!wpMenu.menuItems.nodes ? (
-    <ul>
-      {wpMenu.menuItems.nodes.map(menuItem => {
-        return <ListLink to={menuItem.path}>{menuItem.label}</ListLink>
+export default props => {
+  return !!props && !!props.menu && !!props.menu.nodes ? (
+    <ul className="menu">
+      {props.menu.nodes.map(menuItem => {
+        return (
+          <ListLink to={menuItem.uri}>
+            {menuItem.uri.replaceAll("/", " ")}
+          </ListLink>
+        )
       })}
     </ul>
-  ) : null
+  ) : (
+    <>null</>
+  )
 }
