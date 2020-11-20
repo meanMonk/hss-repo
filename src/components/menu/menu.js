@@ -16,7 +16,7 @@ export default props => {
       {props.menu.nodes.map(menuItem => {
         return (
           <ListLink to={menuItem.uri}>
-            {menuItem.uri.replaceAll("/", " ")}
+            {menuItem.uri.replace(new RegExp("/", "g"), " ")}
           </ListLink>
         )
       })}
